@@ -13,7 +13,7 @@ Estudiantes:
 - Karen Johana Caicedo Arias.
 - Oscar Guillermo Sierra Lozano.
 ## Repositorios
-- [Bakend_Task_Manager](https://www.ejemplo.com](https://github.com/Yefersom10/Bakend_Task_Manager.git)
+- [Bakend_Task_Manager](https://github.com/Yefersom10/Bakend_Task_Manager.git)
 - 
 ## Herramientas de Gestion de Proyecto 
 - Trello:
