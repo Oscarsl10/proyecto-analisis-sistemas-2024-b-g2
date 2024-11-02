@@ -17,4 +17,4 @@ Estudiantes:
 - 
 ## Herramientas de Gestion de Proyecto 
 - Trello:
-- Figma Mocjup :[Enlace del espacio de trabajo en figma](https://www.figma.com/design/zEOMCveRZePjWazYS53n4M/Untitled?node-id=5-207&t=vExpa35cnH2MFkQo-1)
+- Figma Mockup :[Enlace del espacio de trabajo en figma](https://www.figma.com/design/zEOMCveRZePjWazYS53n4M/Untitled?node-id=5-207&t=vExpa35cnH2MFkQo-1)
