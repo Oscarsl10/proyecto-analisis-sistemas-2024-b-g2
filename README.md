@@ -17,4 +17,4 @@ Estudiantes:
 - [Frontend_Task_Manager](https://github.com/Yefersom10/Fronted_Task_Manager.git)
 ## Herramientas de Gestion de Proyecto 
 - Trello:
-- Figma Mockup :[Enlace del espacio de trabajo en figma](https://www.figma.com/design/zEOMCveRZePjWazYS53n4M/Untitled?node-id=5-207&t=vExpa35cnH2MFkQo-1)
+- Figma Mockup :[Enlace del espacio de trabajo en figma](https://www.figma.com/design/iK2gOMus7JxhlZpNlc02oL/Untitled?node-id=1-324&t=8aabh4nnkYNTBdFb-1)
