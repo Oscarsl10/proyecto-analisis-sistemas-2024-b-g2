@@ -1,4 +1,4 @@
-# proyecto-analisis-sistemas-2024-b-g2
+# proyecto-task-manager-2024-b
 
 ### Proyecto de Análisis de Sistemas.
 
