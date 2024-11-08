@@ -1,0 +1,50 @@
+@startuml
+
+package ENTITIES {
+    class Tarea {
+        - Integer id
+        - String namTarea
+        - String descripcion
+        - Date fecha_creacion
+        + getId(): Integer
+        + setId(id: Integer): void
+        + getNamTarea(): String
+        + setNamTarea(namTarea: String): void
+        + getDescripcion(): String
+        + setDescripcion(descripcion: String): void
+        + getFecha_creacion(): Date
+        + setFecha_creacion(fecha_creacion: Date): void
+    }
+}
+
+package CONTROLLERS {
+
+    class TareaController {
+        + getAllTareas(): List<Tarea>
+        + createTarea(tarea: Tarea): Tarea
+    }
+}
+
+package SERVICES {
+
+    class TareaService {
+        + getTareas(): List<Tarea>
+    }
+    class TareaServiceImpl {
+        + getTareas(): List<Tarea>
+    }
+}
+
+package REPOSITORIES {
+
+    interface TareaRepository {
+        + findAll(): List<Tarea>
+    }
+}
+
+ENTITIES.Tarea --> REPOSITORIES.TareaRepository
+SERVICES.TareaService <|-- SERVICES.TareaServiceImpl
+CONTROLLERS.TareaController --> ENTITIES.Tarea
+SERVICES.TareaServiceImpl ..> REPOSITORIES.TareaRepository : utiliza
+
+@enduml
