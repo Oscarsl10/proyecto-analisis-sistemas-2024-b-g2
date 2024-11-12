@@ -1,0 +1,20 @@
+@startuml
+
+start
+:Usuario solicita ver todas las tareas;
+:TareaController recibe la solicitud;
+:TareaController llama a TareaService.getTareas();
+
+if (¿TareaServiceImpl encuentra tareas?) then (Sí)
+    :TareaServiceImpl llama a TareaRepository.findAll();
+    :TareaRepository devuelve la lista de tareas;
+    :TareaServiceImpl devuelve la lista de tareas a TareaController;
+    :TareaController envía la lista de tareas al usuario;
+else (No)
+    :TareaServiceImpl devuelve una lista vacía;
+    :TareaController envía mensaje de "No hay tareas" al usuario;
+endif
+
+stop
+
+@enduml

@@ -1,0 +1,25 @@
+@startuml
+
+package "SERVICES" {
+    interface TareaService
+    class TareaServiceImpl
+}
+
+package "CONTROLLERS" {
+    class TareaController
+}
+
+package "ENTITIES" {
+    class Tarea
+}
+
+package "REPOSITORIES" {
+    interface TareaRepository
+}
+
+SERVICES .up.|> CONTROLLERS
+SERVICES .up.|> REPOSITORIES
+CONTROLLERS --> ENTITIES
+REPOSITORIES --> ENTITIES
+
+@enduml
