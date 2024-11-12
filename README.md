@@ -1,8 +1,7 @@
 # proyecto-task-manager-2024-b
 
-### Proyecto de Análisis de Sistemas.
+### Proyecto Task Manager.
 
-## Tema proyecto: Task Manager.
 
 Task Manager es una aplicación web que combina Angular en el frontend y Spring Boot en el backend, diseñada para gestionar y organizar tareas de manera eficiente. La aplicación permite a los usuarios crear, editar, eliminar y visualizar tareas, proporcionando una interfaz intuitiva y responsiva.
 
