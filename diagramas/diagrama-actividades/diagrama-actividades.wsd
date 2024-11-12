@@ -1,20 +1,79 @@
 @startuml
-
+|usuario|
 start
-:Usuario solicita ver todas las tareas;
-:TareaController recibe la solicitud;
-:TareaController llama a TareaService.getTareas();
+:rellenar campos:
+- Email;
+- Contraseña;
 
-if (¿TareaServiceImpl encuentra tareas?) then (Sí)
-    :TareaServiceImpl llama a TareaRepository.findAll();
-    :TareaRepository devuelve la lista de tareas;
-    :TareaServiceImpl devuelve la lista de tareas a TareaController;
-    :TareaController envía la lista de tareas al usuario;
-else (No)
-    :TareaServiceImpl devuelve una lista vacía;
-    :TareaController envía mensaje de "No hay tareas" al usuario;
+if (¿Deseas registrarte?) then (sí)
+    :rellenar campos adicionales:
+    - Nombre de Usuario;
+    - Rol;
+    :registrarse;
+    if (¿enviar usuario?) then (sí)
+        :generar datos de usuario;
+        :enviar correo con:
+        - Nombre de Usuario;
+        - Email;
+        - Rol;
+        - Contraseña;
+    else (no)
+        :regresar;
+    endif
+    if (¿enviar correo?) then (sí)
+        :confirmar envío de credenciales;
+    else (no)
+        :volver al inicio;
+    endif
+else (no)
+    :iniciar sesión;
+    if (¿credenciales correctas?) then (sí)
+        :acceso concedido;
+    else (no)
+        :mostrar error de credenciales;
+        :regresar al inicio;
+    endif
 endif
 
-stop
+|gestion de tareas|
+:entrar a tareas;
+if (¿crear tarea?) then (sí)
+    :registrar tarea;
+    |base de datos|
+    :guardar tarea;
+else (no)
+    if (¿quieres actualizar la tarea?) then (sí)
+        |base de datos|
+        :consultar tarea;
+        |gestion de tareas|
+        :modificar tarea;
+        |base de datos|
+        :actualizar tarea;
+    else (no)
+        :tarea no actualizada;
+    endif
+endif
 
+if (¿quieres eliminar tarea?) then (sí)
+    |base de datos|
+    :consultar tarea;
+    |gestion de tareas|
+    :eliminar tarea;
+    |base de datos|
+    :borrar tarea;
+else (no)
+    :salir de la gestión de tareas;
+endif
+
+if (¿quieres visualizar la tarea hecha?) then (sí)
+    |base de datos|
+    :consultar tarea;
+    |gestion de tareas|
+    :ver tarea;
+else (no)
+    :saliendo de la gestión de tareas;
+endif
+
+:cerrar sesión;
+stop
 @enduml
