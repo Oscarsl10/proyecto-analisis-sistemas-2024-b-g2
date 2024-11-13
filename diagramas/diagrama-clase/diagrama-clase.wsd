@@ -1,0 +1,46 @@
+@startuml
+class Tarea {
+    +Long id
+    +String namTarea
+    +String descripcion
+    +Date fecha_creacion
+    +getId(): Long
+    +setId(id: Long)
+    +getNamTarea(): String
+    +setNamTarea(namTarea: String)
+    +getDescripcion(): String
+    +setDescripcion(descripcion: String)
+    +getFecha_creacion(): Date
+    +setFecha_creacion(fecha_creacion: Date)
+}
+
+class Usuario {
+    +Long id
+    +String nomUsuario
+    +String email
+    +String rol
+    +String contrasenia
+    +getId(): Long
+    +setId(id: Long)
+    +getNomUsuario(): String
+    +setNomUsuario(nomUsuario: String)
+    +getEmail(): String
+    +setEmail(email: String)
+    +getRol(): String
+    +setRol(rol: String)
+    +getContrasenia(): String
+    +setContrasenia(contrasenia: String)
+}
+
+interface CRUD {
+    +create(entity: T): T
+    +read(): List<T>
+    +update(entity: T, id: Long): void
+    +delete(id: Long): void
+}
+
+Tarea "1" --* "1" Usuario : tiene
+CRUD "1" -- "1" Tarea : maneja
+CRUD "1" -- "1" Usuario : maneja
+
+@enduml
