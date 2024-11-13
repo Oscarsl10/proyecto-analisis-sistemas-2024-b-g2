@@ -1,4 +1,12 @@
 @startuml
+
+interface CRUD {
+    + finAll: public List<Entity> findall();
+    + findById: public Entity findById(Long id);
+    + save: public Entity save(Entity entity);
+    + delete: public void delete(Long id);
+}
+
 class Tarea {
     +Long id
     +String namTarea
@@ -32,15 +40,8 @@ class Usuario {
     +setContrasenia(contrasenia: String)
 }
 
-interface CRUD {
-    +create(entity: T): T
-    +read(): List<T>
-    +update(entity: T, id: Long): void
-    +delete(id: Long): void
-}
-
-Tarea "1" --* "1" Usuario : tiene
-CRUD "1" -- "1" Tarea : maneja
-CRUD "1" -- "1" Usuario : maneja
+Tarea *-- Usuario : tiene
+CRUD  <--  Tarea : maneja
+CRUD  <-- Usuario : maneja
 
 @enduml
