@@ -17,3 +17,6 @@ Estudiantes:
 ## Herramientas de Gestion de Proyecto 
 - Trello:[ Enlace espacio de trabajo en Trello](https://trello.com/invite/b/6716e1b6ed72596010459408/ATTId819a37d5b94070ecc72b75fd337f0c77EAA96CA/task-manager)
 - Figma Mockup :[ Enlace del espacio de trabajo en figma ](https://www.figma.com/design/iK2gOMus7JxhlZpNlc02oL/Untitled?node-id=1-324&t=8aabh4nnkYNTBdFb-1)
+
+## Video:
+- Video pitch :[ Enlace video](https://youtu.be/45hsEZMNAM0?feature=shared)
