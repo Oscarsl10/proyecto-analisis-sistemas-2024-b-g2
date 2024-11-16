@@ -1,25 +1,41 @@
 @startuml
 
-package "SERVICES" {
-    interface TareaService
-    class TareaServiceImpl
+package "controller" {
+    [TareaController]
+    [UsuarioRestController]
 }
 
-package "CONTROLLERS" {
-    class TareaController
+package "service" {
+    package "Interfaces" {
+        [IUsuarioService]
+        [TareaService]
+    }
+    package "Implementaciones" {
+        [TareaServiceImpl]
+        [UsuarioServiceImpl]
+    }
 }
 
-package "ENTITIES" {
-    class Tarea
+package "repository" {
+    [IUsuarioRepository]
+    [TareaRepository]
 }
 
-package "REPOSITORIES" {
-    interface TareaRepository
+package "entity" {
+    [Tarea]
+    [Usuario]
 }
 
-SERVICES .up.|> CONTROLLERS
-SERVICES .up.|> REPOSITORIES
-CONTROLLERS --> ENTITIES
-REPOSITORIES --> ENTITIES
+package "exeption" {
+    [ErrorDetails]
+    [GlobalExceptionHandler]
+    [ResourceNotFoundException]
+}
+
+controller --> service : utiliza
+service --> repository : utiliza
+service --> entity : maneja
+controller --> exeption : maneja excepciones
+exeption --> service : lanza excepciones
 
 @enduml
